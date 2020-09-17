@@ -80,6 +80,7 @@ func (ll *SinglyLinkedList) InsertAt(i int, value ElementType) error {
 	if i == 0 {
 		newNode.Next = ll.head
 		ll.head = newNode
+		ll.size++
 		return nil
 	}
 
@@ -101,7 +102,7 @@ func (ll *SinglyLinkedList) RemoveAt(i int) (*ElementType, error) {
 	}
 
 	curNode := ll.head
-	for j := 0; i < i-1; j++ {
+	for j := 0; j < i-1; j++ {
 		curNode = curNode.Next
 	}
 
@@ -112,6 +113,9 @@ func (ll *SinglyLinkedList) RemoveAt(i int) (*ElementType, error) {
 }
 
 func (ll *SinglyLinkedList) IndexOf(value ElementType) int {
+	if ll.head == nil {
+		return -1
+	}
 	curNode := ll.head
 	i := 0
 	for {

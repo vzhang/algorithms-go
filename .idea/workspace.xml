@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55107d56-c134-462f-b808-f3048942f581" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/linkedlist/linkedlist_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/palindrome.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/palindrome_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linkedlist/linkedlist.go" beforeDir="false" afterPath="$PROJECT_DIR$/linkedlist/linkedlist.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linkedlist/lru.go" beforeDir="false" afterPath="$PROJECT_DIR$/linkedlist/lru.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
-  <component name="RunManager" selected="Go Test.go test github.com/vzhang/algorithms/linkedlist">
+  <component name="RunManager" selected="Go Test.TestPalindrome in github.com/vzhang/algorithms/linkedlist (3)">
     <configuration name="go build github.com/vzhang/algorithms" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="algorithms-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -72,7 +75,7 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go test github.com/vzhang/algorithms/linkedlist" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPalindrome in github.com/vzhang/algorithms/linkedlist (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algorithms-go" />
       <working_directory value="$PROJECT_DIR$/linkedlist" />
       <framework value="gotest" />
@@ -80,11 +83,48 @@
       <package value="github.com/vzhang/algorithms/linkedlist" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPalindrome\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPalindrome in github.com/vzhang/algorithms/linkedlist (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithms-go" />
+      <working_directory value="$PROJECT_DIR$/linkedlist" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/vzhang/algorithms/linkedlist" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPalindrome\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPalindrome in github.com/vzhang/algorithms/linkedlist (3)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithms-go" />
+      <working_directory value="$PROJECT_DIR$/linkedlist" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/vzhang/algorithms/linkedlist" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPalindrome\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPalindrome in github.com/vzhang/algorithms/linkedlist" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithms-go" />
+      <working_directory value="$PROJECT_DIR$/linkedlist" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/vzhang/algorithms/linkedlist" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPalindrome\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.go test github.com/vzhang/algorithms/linkedlist" />
+        <item itemvalue="Go Test.TestPalindrome in github.com/vzhang/algorithms/linkedlist (3)" />
+        <item itemvalue="Go Test.TestPalindrome in github.com/vzhang/algorithms/linkedlist (2)" />
+        <item itemvalue="Go Test.TestPalindrome in github.com/vzhang/algorithms/linkedlist (1)" />
+        <item itemvalue="Go Test.TestPalindrome in github.com/vzhang/algorithms/linkedlist" />
         <item itemvalue="Go Build.go build github.com/vzhang/algorithms" />
       </list>
     </recent_temporary>
@@ -103,50 +143,75 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state width="2007" height="362" key="GridCell.Tab.0.bottom" timestamp="1600352923719">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.0.bottom" timestamp="1600356827370">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="362" key="GridCell.Tab.0.bottom/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352923719" />
-    <state width="2007" height="362" key="GridCell.Tab.0.center" timestamp="1600352923718">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.0.bottom/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827370" />
+    <state width="2007" height="445" key="GridCell.Tab.0.bottom/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047048" />
+    <state width="1750" height="351" key="GridCell.Tab.0.center" timestamp="1600356827369">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="362" key="GridCell.Tab.0.center/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352923718" />
-    <state width="2007" height="362" key="GridCell.Tab.0.left" timestamp="1600352923718">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.0.center/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827369" />
+    <state width="2007" height="445" key="GridCell.Tab.0.center/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047047" />
+    <state width="1750" height="351" key="GridCell.Tab.0.left" timestamp="1600356827369">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="362" key="GridCell.Tab.0.left/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352923718" />
-    <state width="2007" height="362" key="GridCell.Tab.0.right" timestamp="1600352923719">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.0.left/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827369" />
+    <state width="2007" height="445" key="GridCell.Tab.0.left/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047047" />
+    <state width="1750" height="351" key="GridCell.Tab.0.right" timestamp="1600356827369">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="362" key="GridCell.Tab.0.right/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352923719" />
-    <state width="2007" height="445" key="GridCell.Tab.1.bottom" timestamp="1600352812091">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.0.right/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827369" />
+    <state width="2007" height="445" key="GridCell.Tab.0.right/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047048" />
+    <state width="1750" height="351" key="GridCell.Tab.1.bottom" timestamp="1600356827371">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="445" key="GridCell.Tab.1.bottom/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352812091" />
-    <state width="2007" height="445" key="GridCell.Tab.1.center" timestamp="1600352812090">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.1.bottom/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827371" />
+    <state width="2007" height="445" key="GridCell.Tab.1.bottom/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047049" />
+    <state width="1750" height="351" key="GridCell.Tab.1.center" timestamp="1600356827370">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="445" key="GridCell.Tab.1.center/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352812090" />
-    <state width="2007" height="445" key="GridCell.Tab.1.left" timestamp="1600352812090">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.1.center/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827370" />
+    <state width="2007" height="445" key="GridCell.Tab.1.center/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047048" />
+    <state width="1750" height="351" key="GridCell.Tab.1.left" timestamp="1600356827370">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="445" key="GridCell.Tab.1.left/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352812090" />
-    <state width="2007" height="445" key="GridCell.Tab.1.right" timestamp="1600352812090">
-      <screen x="1792" y="23" width="2560" height="1417" />
+    <state width="1750" height="351" key="GridCell.Tab.1.left/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827370" />
+    <state width="2007" height="445" key="GridCell.Tab.1.left/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047048" />
+    <state width="1750" height="351" key="GridCell.Tab.1.right" timestamp="1600356827370">
+      <screen x="0" y="23" width="1792" height="1041" />
     </state>
-    <state width="2007" height="445" key="GridCell.Tab.1.right/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600352812090" />
+    <state width="1750" height="351" key="GridCell.Tab.1.right/1792.23.2560.1417/0.23.1792.1041@0.23.1792.1041" timestamp="1600356827370" />
+    <state width="2007" height="445" key="GridCell.Tab.1.right/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600356047048" />
     <state x="2693" y="432" key="SettingsEditor" timestamp="1600351598897">
       <screen x="1792" y="23" width="2560" height="1417" />
     </state>
     <state x="2693" y="432" key="SettingsEditor/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600351598897" />
-    <state x="2856" y="445" width="670" height="676" key="search.everywhere.popup" timestamp="1600351968039">
+    <state x="2856" y="445" width="670" height="676" key="search.everywhere.popup" timestamp="1600355002137">
       <screen x="1792" y="23" width="2560" height="1417" />
     </state>
-    <state x="2856" y="445" width="670" height="676" key="search.everywhere.popup/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600351968039" />
+    <state x="2856" y="445" width="670" height="676" key="search.everywhere.popup/1792.23.2560.1417/0.23.1792.1041@1792.23.2560.1417" timestamp="1600355002137" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedlist/palindrome.go</url>
+          <line>39</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/linkedlist/palindrome.go</url>
+          <line>35</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
