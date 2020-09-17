@@ -1,6 +1,11 @@
 package linkedlist
 
-type ElementType interface {}
+import (
+	"fmt"
+	"sync"
+)
+
+type ElementType interface{}
 
 type Node struct {
 	Data ElementType
@@ -14,28 +19,26 @@ func NewNode(value ElementType) *Node {
 	}
 }
 
-type LinkedList struct {
-	Capacity int
-	Head *Node
+type SinglyLinkedList struct {
+	head *Node
+	size int
+	lock sync.RWMutex
 }
 
-func NewLinkedList(capacity int, head *Node) *LinkedList {
-	return &LinkedList{
-		Capacity: capacity,
-		Head: head,
-	}
+func NewLinkedList() *SinglyLinkedList {
+	return &SinglyLinkedList{}
 }
 
-func (ll *LinkedList) IsEmpty() bool {
-	return ll.Head == nil
+func (ll *SinglyLinkedList) IsEmpty() bool {
+	return ll.head == nil
 }
 
-func (ll *LinkedList) Length() int {
-	if ll.Head == nil {
+func (ll *SinglyLinkedList) Size() int {
+	if ll.head == nil {
 		return 0
 	}
 	length := 1
-	curNode := ll.Head
+	curNode := ll.head
 	for {
 		if curNode.Next == nil {
 			return length
@@ -45,13 +48,17 @@ func (ll *LinkedList) Length() int {
 	}
 }
 
-func (ll *LinkedList) Append(node *Node) {
-	if ll.Head == nil {
-		ll.Head = node
+func (ll *SinglyLinkedList) Append(value ElementType) {
+	ll.lock.Lock()
+	defer ll.lock.Unlock()
+	node := &Node{Data: value}
+	if ll.head == nil {
+		ll.head = node
+		ll.size = 1
 		return
 	}
 
-	curNode := ll.Head
+	curNode := ll.head
 	for {
 		if curNode.Next == nil {
 			break
@@ -59,6 +66,82 @@ func (ll *LinkedList) Append(node *Node) {
 			curNode = curNode.Next
 		}
 	}
-
+	ll.size++
 	curNode.Next = node
+}
+
+func (ll *SinglyLinkedList) InsertAt(i int, value ElementType) error {
+	ll.lock.Lock()
+	defer ll.lock.Unlock()
+	if i < 0 || i > ll.size {
+		return fmt.Errorf("index out of bounds")
+	}
+	newNode := &Node{Data: value}
+	if i == 0 {
+		newNode.Next = ll.head
+		ll.head = newNode
+		return nil
+	}
+
+	curNode := ll.head
+	for j := 0; j < i-1; j++ {
+		curNode = curNode.Next
+	}
+	newNode.Next = curNode.Next
+	curNode.Next = newNode
+	ll.size++
+	return nil
+}
+
+func (ll *SinglyLinkedList) RemoveAt(i int) (*ElementType, error) {
+	ll.lock.Lock()
+	defer ll.lock.Unlock()
+	if i < 0 || i > ll.size {
+		return nil, fmt.Errorf("index out of bounds")
+	}
+
+	curNode := ll.head
+	for j := 0; i < i-1; j++ {
+		curNode = curNode.Next
+	}
+
+	remove := curNode.Next
+	curNode.Next = remove.Next
+	ll.size--
+	return &remove.Data, nil
+}
+
+func (ll *SinglyLinkedList) IndexOf(value ElementType) int {
+	curNode := ll.head
+	i := 0
+	for {
+		if curNode.Data == value {
+			return i
+		}
+
+		if curNode.Next == nil {
+			return -1
+		}
+
+		curNode = curNode.Next
+		i++
+	}
+}
+
+func (ll *SinglyLinkedList) String() {
+	curNode := ll.head
+	for {
+		if curNode == nil {
+			break
+		}
+
+		fmt.Print(curNode.Data)
+		fmt.Print("")
+		curNode = curNode.Next
+	}
+	fmt.Println()
+}
+
+func (ll *SinglyLinkedList) Head() *Node {
+	return ll.head
 }
