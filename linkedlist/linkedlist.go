@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-type ElementType interface{}
+type ElementType int //interface{}
 
 type Node struct {
 	Data ElementType
@@ -148,4 +148,95 @@ func (ll *SinglyLinkedList) String() {
 
 func (ll *SinglyLinkedList) Head() *Node {
 	return ll.head
+}
+
+// 单链表反转
+func (ll *SinglyLinkedList) Reverse() {
+	if ll.head == nil || ll.head.Next == nil {
+		return
+	}
+	var reversedNode *Node
+	curNode := ll.head
+	for curNode != nil {
+		next := curNode.Next
+
+		var temp = curNode
+		temp.Next = reversedNode
+		reversedNode = temp
+
+		curNode = next
+	}
+
+	ll.head = reversedNode
+}
+
+// 链表中的换检测
+func (ll *SinglyLinkedList) LoopDetected() bool {
+	return false
+}
+
+// 两个有序的链表合并
+func (ll *SinglyLinkedList) Merge(ll2 *SinglyLinkedList) {
+	head := NewNode(-1)
+	curNode := head
+
+	curNode1 := ll.head
+	curNode2 := ll2.head
+	for curNode1 != nil && curNode2 != nil {
+		if curNode1.Data < curNode2.Data {
+			curNode.Next = curNode1
+			curNode1 = curNode1.Next
+		} else {
+			curNode.Next = curNode2
+			curNode2 = curNode2.Next
+		}
+
+		curNode = curNode.Next
+	}
+
+	if curNode1 != nil {
+		curNode.Next = curNode1
+	}
+
+	if curNode2 != nil {
+		curNode.Next = curNode2
+	}
+
+	ll.head = head.Next
+}
+
+// 删除链表倒数第n个结点
+
+/*
+	解题思路：
+	定义两个指针A和B,A和B之间前进的步数相差N
+	当B走完的时候，A所在的位置就是结果
+*/
+func (ll *SinglyLinkedList) RemoveAtFromLast(i int) (*ElementType, error) {
+	var slowNode = ll.head
+	var fastNode = ll.head
+
+	for j := i; j >= 0; j-- {
+		if fastNode == nil {
+			return nil, fmt.Errorf("i is bigger than lenght")
+		}
+
+		fastNode = fastNode.Next
+	}
+
+	for fastNode != nil {
+		slowNode = slowNode.Next
+		fastNode = fastNode.Next
+	}
+
+	ret := slowNode.Next
+
+	slowNode.Next = slowNode.Next.Next
+
+	return &ret.Data, nil
+}
+
+// 求链表的中间结点
+func (ll *SinglyLinkedList) Middle() *ElementType {
+	return nil
 }
