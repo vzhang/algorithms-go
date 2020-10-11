@@ -170,8 +170,25 @@ func (ll *SinglyLinkedList) Reverse() {
 	ll.head = reversedNode
 }
 
-// 链表中的换检测
+// 链表中的环检测
+// 快慢指针，如果相遇了，就说明有环，如果结束了并且没相遇，就证明没有环
 func (ll *SinglyLinkedList) LoopDetected() bool {
+	if ll.head == nil || ll.head.Next == nil {
+		return false
+	}
+
+	slowNode := ll.head
+	fastNode := ll.head
+
+	for fastNode != nil && fastNode.Next != nil {
+		fastNode = fastNode.Next.Next
+		slowNode = slowNode.Next
+
+		if slowNode == fastNode {
+			return true
+		}
+	}
+
 	return false
 }
 
