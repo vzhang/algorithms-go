@@ -254,6 +254,19 @@ func (ll *SinglyLinkedList) RemoveAtFromLast(i int) (*ElementType, error) {
 }
 
 // 求链表的中间结点
-func (ll *SinglyLinkedList) Middle() *ElementType {
-	return nil
+// 快慢指针，当快指针结束的时候，就是中间结点
+func (ll *SinglyLinkedList) Middle() *Node {
+	if ll.head == nil {
+		return nil
+	}
+
+	fastNode := ll.head
+	slowNode := ll.head
+
+	for fastNode != nil && fastNode.Next != nil {
+		slowNode = slowNode.Next
+		fastNode = fastNode.Next.Next
+	}
+
+	return slowNode
 }
